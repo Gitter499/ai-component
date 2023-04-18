@@ -58,7 +58,7 @@ const App = () => {
 
 - [x] Write intial code
 - [x] Write example
-- [] Test on Next 13
-- [] Test on Vite (once support for RSC comes out)
-- [] Community prompts
-- [] Optimize
+- [ ] Test on Next 13
+- [ ] Test on Vite (once support for RSC comes out)
+- [ ] Community prompts
+- [ ] Optimize
