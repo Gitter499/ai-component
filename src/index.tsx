@@ -88,9 +88,7 @@ const getContextFromFiles = async (
 
 const generateJsx = async (
   config: Config,
-
   docs: Document[],
-  apiKey: string
 ): Promise<string> => {
   const prompt = prompts.find(p =>
     p.name === config.promptName ? config.promptName : 'base'
@@ -98,7 +96,7 @@ const generateJsx = async (
 
   const chat = new ChatOpenAI({
     temperature: 0,
-    openAIApiKey: apiKey,
+    openAIApiKey: config.apiKey,
   });
 
   const chain = new LLMChain({
@@ -137,8 +135,7 @@ const AiComponent = async ({ config, loader }: Props) => {
 
   const jsx = await generateJsx(
     config,
-    [...stylingContext, ...localContext],
-    config.apiKey
+    [...stylingContext, ...localContext]
   );
 
   return (
